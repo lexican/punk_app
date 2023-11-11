@@ -109,27 +109,27 @@ class Punk {
       name: map['name'] != null ? map['name'] as String : null,
       tagline: map['tagline'] != null ? map['tagline'] as String : null,
       firstBrewed:
-          map['firstBrewed'] != null ? map['firstBrewed'] as String : null,
+          map['first_brewed'] != null ? map['first_brewed'] as String : null,
       description:
           map['description'] != null ? map['description'] as String : null,
-      imageUrl: map['imageUrl'] != null ? map['imageUrl'] as String : null,
+      imageUrl: map['image_url'] != null ? map['image_url'] as String : null,
       abv: map['abv'] != null ? map['abv'] as num : null,
       ibu: map['ibu'] != null ? map['ibu'] as num : null,
-      targetFg: map['targetFg'] != null ? map['targetFg'] as num : null,
-      targetOg: map['targetOg'] != null ? map['targetOg'] as num : null,
+      targetFg: map['target_fg'] != null ? map['target_fg'] as num : null,
+      targetOg: map['target_og'] != null ? map['target_og'] as num : null,
       ebc: map['ebc'] != null ? map['ebc'] as num : null,
       srm: map['srm'] != null ? map['srm'] as num : null,
       ph: map['ph'] != null ? map['ph'] as num : null,
-      attenuationLevel: map['attenuationLevel'] != null
-          ? map['attenuationLevel'] as num
+      attenuationLevel: map['attenuation_level'] != null
+          ? map['attenuation_level'] as num
           : null,
-      foodPairing: map['foodPairing'] != null
-          ? List<String>.from((map['foodPairing'] as List<String>))
-          : null,
-      brewersTips:
-          map['brewersTips'] != null ? map['brewersTips'] as String : null,
-      contributedBy:
-          map['contributedBy'] != null ? map['contributedBy'] as String : null,
+      // foodPairing: map['food_pairing'] != null
+      //     ? List<String>.from((map['food_pairing'] as List<String>))
+      //     : null,
+      // brewersTips:
+      //     map['brewers_tips'] != null ? map['brewers_tips'] as String : null,
+      // contributedBy:
+      //     map['contributed_by'] != null ? map['contributed_by'] as String : null,
     );
   }
 

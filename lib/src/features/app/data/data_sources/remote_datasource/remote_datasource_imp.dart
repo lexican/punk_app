@@ -3,8 +3,8 @@ import 'package:dio/dio.dart';
 import 'package:motopay_assessment_test/src/core/api/api_client.dart';
 import 'package:motopay_assessment_test/src/core/api/exceptions/network_exceptions.dart';
 import 'package:motopay_assessment_test/src/core/constants/api_config.dart';
-import 'package:motopay_assessment_test/src/features/home/data/data_sources/remote_datasource/remote_datasource.dart';
-import 'package:motopay_assessment_test/src/features/home/data/models/punk.dart';
+import 'package:motopay_assessment_test/src/features/app/data/data_sources/remote_datasource/remote_datasource.dart';
+import 'package:motopay_assessment_test/src/features/app/data/models/punk.dart';
 
 class RemoteDataSourceImp extends RemoteDataSource {
   late ApiClient _apiClient;

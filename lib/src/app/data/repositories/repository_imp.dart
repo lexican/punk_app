@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import 'package:motopay_assessment_test/src/features/app/data/models/punk.dart';
+import 'package:motopay_assessment_test/src/app/data/models/punk.dart';
 
 import '../../domain/repositories/repository.dart';
 import '../data_sources/remote_datasource/remote_datasource.dart';

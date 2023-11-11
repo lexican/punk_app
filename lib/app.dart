@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:motopay_assessment_test/gen/fonts.gen.dart';
 import 'package:motopay_assessment_test/src/core/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -18,7 +19,7 @@ class _MyAppState extends State<MyApp> {
         primaryColor: const Color(0xFF3558CD),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        //fontFamily: FontFamily.notoSans,
+        fontFamily: FontFamily.notoSans,
         textTheme: const TextTheme(
           displayLarge: TextStyle(
             fontSize: 24,

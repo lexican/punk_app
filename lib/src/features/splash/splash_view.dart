@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:motopay_assessment_test/src/core/widgets/punk_text.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -15,11 +16,19 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(
+    return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
+      body: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          
+          Center(
+            child: PunkText.h1(
+              content: 'PUNK',
+              color: Colors.white,
+              fontSize: 32,
+            ),
+          )
         ],
       ),
     );

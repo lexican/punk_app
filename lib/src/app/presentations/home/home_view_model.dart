@@ -3,6 +3,7 @@ import 'package:motopay_assessment_test/src/app/data/repositories/repository_imp
 import 'package:motopay_assessment_test/src/app/domain/repositories/repository.dart';
 import 'package:motopay_assessment_test/src/app/domain/ues_cases/get_punks_usecase/get_punks_usecase.dart';
 import 'package:motopay_assessment_test/src/core/app/locator.dart';
+import 'package:motopay_assessment_test/src/core/utils/app_utils.dart';
 import 'package:stacked/stacked.dart';
 
 class HomeViewModel extends BaseViewModel {
@@ -34,10 +35,10 @@ class HomeViewModel extends BaseViewModel {
       final result = await _getPunksCase.call(page: page);
 
       result.fold((l) {
-        print("Error: $l");
+        logger.e("Error: $l");
       }, (r) {
         _punks.addAll(r);
-        print("Error: ${r[0]}");
+        logger.i("Error: ${r[0]}");
         _isLoading = false;
         page++;
         notifyListeners();
@@ -50,7 +51,7 @@ class HomeViewModel extends BaseViewModel {
       final result = await _getPunksCase.call(page: page);
 
       result.fold((l) {
-        print("Error: $l");
+        logger.e("Error: $l");
       }, (r) {
         _isLoadingMore = false;
         _punks.addAll(r);

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:motopay_assessment_test/src/constants/api_config.dart';
+import 'package:motopay_assessment_test/src/core/constants/api_config.dart';
 
 class ApiClient {
   final Dio _client = Dio(

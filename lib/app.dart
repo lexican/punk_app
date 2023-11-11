@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:motopay_assessment_test/src/app/app.router.dart';
+import 'package:motopay_assessment_test/src/core/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class MyApp extends StatefulWidget {

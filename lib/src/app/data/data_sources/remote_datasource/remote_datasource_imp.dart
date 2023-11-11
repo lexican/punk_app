@@ -13,8 +13,9 @@ class RemoteDataSourceImp extends RemoteDataSource {
   }
   @override
   Future<Either<String, List<Punk>>> getPunks(
-      {int? page = 1, int? perPage = 25}) async {
+      {int? page = 1, int perPage = 25}) async {
     try {
+      print(" perPage : $perPage");
       final response = await _apiClient.get(
         ApiConfig.punksPath,
         parameters: {

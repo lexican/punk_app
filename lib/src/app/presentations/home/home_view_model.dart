@@ -8,7 +8,9 @@ import 'package:stacked/stacked.dart';
 class HomeViewModel extends BaseViewModel {
   final Repository _repository = locator<RepositoryImp>();
   late GetPunksCase _getPunksCase;
-  int limit = 24;
+  int limit = 25;
+
+  int page = 1;
 
   final List<Punk> _punks = [];
   List<Punk> get punks => _punks;
@@ -19,6 +21,9 @@ class HomeViewModel extends BaseViewModel {
   bool _isLoadingMore = false;
   bool get isLoadingMore => _isLoadingMore;
 
+  bool _hasReachedMax = false;
+  bool get hasReachedMax => _hasReachedMax;
+
   Future<void> onViewModelReady() async {
     _getPunksCase = GetPunksCase(_repository);
     await fetchPunks();
@@ -26,7 +31,7 @@ class HomeViewModel extends BaseViewModel {
 
   Future<void> fetchPunks() async {
     if (_punks.isEmpty) {
-      final result = await _getPunksCase.call(page: 1, perPage: 25);
+      final result = await _getPunksCase.call(page: page);
 
       result.fold((l) {
         print("Error: $l");
@@ -34,6 +39,24 @@ class HomeViewModel extends BaseViewModel {
         _punks.addAll(r);
         print("Error: ${r[0]}");
         _isLoading = false;
+        page++;
+        notifyListeners();
+      });
+    } else {
+      if (!_isLoadingMore) {
+        _isLoadingMore = true;
+        notifyListeners();
+      }
+      final result = await _getPunksCase.call(page: page);
+
+      result.fold((l) {
+        print("Error: $l");
+      }, (r) {
+        _isLoadingMore = false;
+        _punks.addAll(r);
+        if (r.length < 25) {
+          _hasReachedMax = true;
+        }
         notifyListeners();
       });
     }

@@ -8,6 +8,6 @@ class GetPunksCase extends ApiBaseUseCase<List<Punk>> {
   final Repository _repository;
   GetPunksCase(this._repository);
   @override
-  Future<Either<String, List<Punk>>> call({int? page, int? perPage}) =>
+  Future<Either<String, List<Punk>>> call({int? page, int perPage = 25}) =>
       _repository.getPunks(page: page, perPage: perPage);
 }

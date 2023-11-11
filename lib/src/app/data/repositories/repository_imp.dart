@@ -11,7 +11,7 @@ class RepositoryImp extends Repository {
     _remoteDataSource = remoteDataSource;
   }
   @override
-  Future<Either<String, List<Punk>>> getPunks({int? page, int? perPage}) {
+  Future<Either<String, List<Punk>>> getPunks({int? page, int perPage = 25}) {
     return _remoteDataSource.getPunks(page: page, perPage: perPage);
   }
 }

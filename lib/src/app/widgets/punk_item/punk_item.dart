@@ -12,7 +12,21 @@ class PunkItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 40.0,
+            offset: Offset(0, 20),
+            color: Color.fromRGBO(
+              2,
+              32,
+              44,
+              0.05,
+            ),
+          ),
+        ],
+      ),
       child: GestureDetector(
         child: Column(
           children: [

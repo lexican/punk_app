@@ -9,6 +9,11 @@ class SplashView extends StatefulWidget {
 
 class _SplashViewState extends State<SplashView> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return const Placeholder();
   }

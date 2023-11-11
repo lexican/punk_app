@@ -1,3 +1,4 @@
+import 'package:motopay_assessment_test/src/api/api_client.dart';
 import 'package:motopay_assessment_test/src/features/splash/splash_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -8,6 +9,7 @@ import 'package:stacked_services/stacked_services.dart';
   ],
   dependencies: [
     LazySingleton(classType: NavigationService),
+    LazySingleton(classType: ApiClient)
   ],
   logger: StackedLogger(),
 )

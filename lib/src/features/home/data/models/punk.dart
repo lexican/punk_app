@@ -10,14 +10,14 @@ class Punk {
   String? firstBrewed;
   String? description;
   String? imageUrl;
-  double? abv;
-  int? ibu;
-  int? targetFg;
-  int? targetOg;
-  int? ebc;
-  int? srm;
-  double? ph;
-  int? attenuationLevel;
+  num? abv;
+  num? ibu;
+  num? targetFg;
+  num? targetOg;
+  num? ebc;
+  num? srm;
+  num? ph;
+  num? attenuationLevel;
   List<String>? foodPairing;
   String? brewersTips;
   String? contributedBy;
@@ -48,14 +48,14 @@ class Punk {
     String? firstBrewed,
     String? description,
     String? imageUrl,
-    double? abv,
-    int? ibu,
-    int? targetFg,
-    int? targetOg,
-    int? ebc,
-    int? srm,
-    double? ph,
-    int? attenuationLevel,
+    num? abv,
+    num? ibu,
+    num? targetFg,
+    num? targetOg,
+    num? ebc,
+    num? srm,
+    num? ph,
+    num? attenuationLevel,
     List<String>? foodPairing,
     String? brewersTips,
     String? contributedBy,
@@ -113,15 +113,15 @@ class Punk {
       description:
           map['description'] != null ? map['description'] as String : null,
       imageUrl: map['imageUrl'] != null ? map['imageUrl'] as String : null,
-      abv: map['abv'] != null ? map['abv'] as double : null,
-      ibu: map['ibu'] != null ? map['ibu'] as int : null,
-      targetFg: map['targetFg'] != null ? map['targetFg'] as int : null,
-      targetOg: map['targetOg'] != null ? map['targetOg'] as int : null,
-      ebc: map['ebc'] != null ? map['ebc'] as int : null,
-      srm: map['srm'] != null ? map['srm'] as int : null,
-      ph: map['ph'] != null ? map['ph'] as double : null,
+      abv: map['abv'] != null ? map['abv'] as num : null,
+      ibu: map['ibu'] != null ? map['ibu'] as num : null,
+      targetFg: map['targetFg'] != null ? map['targetFg'] as num : null,
+      targetOg: map['targetOg'] != null ? map['targetOg'] as num : null,
+      ebc: map['ebc'] != null ? map['ebc'] as num : null,
+      srm: map['srm'] != null ? map['srm'] as num : null,
+      ph: map['ph'] != null ? map['ph'] as num : null,
       attenuationLevel: map['attenuationLevel'] != null
-          ? map['attenuationLevel'] as int
+          ? map['attenuationLevel'] as num
           : null,
       foodPairing: map['foodPairing'] != null
           ? List<String>.from((map['foodPairing'] as List<String>))

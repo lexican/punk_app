@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
+import 'package:motopay_assessment_test/src/core/utils/app_utils.dart';
 
 class NetworkExceptions implements Exception {
   late String message;
 
   NetworkExceptions.fromDioException(DioException dioException) {
+    logger.e("dioException ${dioException.toString()}");
     switch (dioException.type) {
       case DioExceptionType.cancel:
         message = "Request to API server was cancelled";
@@ -28,8 +29,8 @@ class NetworkExceptions implements Exception {
         message = "Send timeout in connection with API server";
         showErrorMessage(message);
         break;
-      case DioExceptionType.unknown:
-        if (dioException.message!.contains("SocketException")) {
+      case DioExceptionType.connectionError:
+        if (dioException.message!.contains("Failed host lookup")) {
           message = 'No Internet';
           showErrorMessage(message);
           break;
@@ -45,7 +46,7 @@ class NetworkExceptions implements Exception {
   }
 
   void showErrorMessage(String message) {
-    debugPrint("Error message : $message");
+    logger.i("Error message : $message");
   }
 
   String _handleError(int? statusCode, dynamic error) {

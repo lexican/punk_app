@@ -39,7 +39,7 @@ class _SplashViewState extends State<SplashView> {
         children: [
           Center(
             child: PunkText.h1(
-              content: 'PUNK',
+              content: 'PUNK APP',
               color: Colors.white,
               fontSize: 32,
             ),

@@ -29,6 +29,11 @@ class HomeView extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: CustomScrollView(
                       slivers: [
+                        const SliverToBoxAdapter(
+                          child: SizedBox(
+                            height: 20,
+                          ),
+                        ),
                         SliverGrid(
                           key: const PageStorageKey<String>('listview'),
                           gridDelegate:

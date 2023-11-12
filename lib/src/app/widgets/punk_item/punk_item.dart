@@ -5,7 +5,6 @@ import 'package:motopay_assessment_test/src/app/widgets/punk_image/punk_image.da
 import 'package:motopay_assessment_test/src/app/widgets/punk_text.dart';
 import 'package:motopay_assessment_test/src/core/app/locator.dart';
 import 'package:motopay_assessment_test/src/core/utils/app_utils.dart';
-import 'package:motopay_assessment_test/src/core/utils/string_utils.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class PunkItem extends StatelessWidget {
@@ -72,7 +71,7 @@ class PunkItem extends StatelessWidget {
                       height: 3,
                     ),
                     PunkText.b1(
-                      content: punk.name.toString().capitalize(),
+                      content: punk.name,
                       color: Colors.black.withOpacity(0.87),
                       fontSize: 14,
                       maxLines: 1,

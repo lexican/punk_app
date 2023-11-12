@@ -23,16 +23,16 @@ void main() {
   });
   group('Use cases tests', () {
     test('Should return a list of punks from repository', () async {
-      when(mockRepository.getPunks()).thenAnswer((_) async {
+      when(mockRepository.getPunks(page: 1, perPage: 25)).thenAnswer((_) async {
         return Right(punks);
       });
-      final data = await getPunksCase.call();
+      final data = await getPunksCase.call(page: 1, perPage: 25);
 
       expect(data, Right(punks));
       expect((data as Right<String, List<Punk>>).value.length, equals(perPage));
 
       // Verify that the function was called on the repo
-      verify(mockRepository.getPunks()).called(1);
+      verify(mockRepository.getPunks(page: 1, perPage: 25)).called(1);
 
       //Verify no other method was called on the repo.
       verifyNoMoreInteractions(mockRepository);

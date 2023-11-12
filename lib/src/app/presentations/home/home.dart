@@ -26,7 +26,7 @@ class HomeView extends StatelessWidget {
                     retry: model.fetchPunks,
                   )
                 : Padding(
-                    padding: const EdgeInsets.all(12),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: CustomScrollView(
                       slivers: [
                         SliverGrid(

@@ -24,6 +24,16 @@ class PunkImage extends StatelessWidget {
         ),
       ),
       imageUrl: imageUrl,
+      errorWidget: (context, url, error) => Container(
+        width: MediaQuery.of(context).size.width,
+        height: 300,
+        color: Colors.grey[50],
+        child: const Icon(
+          Icons.image,
+          color: Colors.grey,
+          size: 30,
+        ),
+      ),
     );
   }
 }

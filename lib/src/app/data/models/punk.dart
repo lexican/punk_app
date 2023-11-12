@@ -123,13 +123,12 @@ class Punk {
       attenuationLevel: map['attenuation_level'] != null
           ? map['attenuation_level'] as num
           : null,
-      // foodPairing: map['food_pairing'] != null
-      //     ? List<String>.from((map['food_pairing'] as List<String>))
-      //     : null,
-      // brewersTips:
-      //     map['brewers_tips'] != null ? map['brewers_tips'] as String : null,
-      // contributedBy:
-      //     map['contributed_by'] != null ? map['contributed_by'] as String : null,
+      foodPairing: map['food_pairing'].cast<String>(),
+      brewersTips:
+          map['brewers_tips'] != null ? map['brewers_tips'] as String : null,
+      contributedBy: map['contributed_by'] != null
+          ? map['contributed_by'] as String
+          : null,
     );
   }
 

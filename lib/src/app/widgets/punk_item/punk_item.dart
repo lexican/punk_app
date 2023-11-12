@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:motopay_assessment_test/src/app/data/models/punk.dart';
+import 'package:motopay_assessment_test/src/app/presentations/punk_details/punk_details_view.dart';
 import 'package:motopay_assessment_test/src/app/widgets/punk_image/punk_image.dart';
 import 'package:motopay_assessment_test/src/app/widgets/punk_text.dart';
+import 'package:motopay_assessment_test/src/core/app/locator.dart';
 import 'package:motopay_assessment_test/src/core/utils/app_utils.dart';
 import 'package:motopay_assessment_test/src/core/utils/string_utils.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class PunkItem extends StatelessWidget {
   final Punk punk;
@@ -11,23 +14,30 @@ class PunkItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 40.0,
-            offset: Offset(0, 20),
-            color: Color.fromRGBO(
-              2,
-              32,
-              44,
-              0.05,
-            ),
+    return GestureDetector(
+      onTap: () {
+        locator<NavigationService>().navigateToView(
+          PunkDetailsView(
+            punk: punk,
           ),
-        ],
-      ),
-      child: GestureDetector(
+        );
+      },
+      child: Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 40.0,
+              offset: Offset(0, 20),
+              color: Color.fromRGBO(
+                2,
+                32,
+                44,
+                0.05,
+              ),
+            ),
+          ],
+        ),
         child: Column(
           children: [
             PunkImage(

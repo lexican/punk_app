@@ -14,7 +14,7 @@ Punk is a mobile app that allows interacting with beers
 - Implement pagination with "Infinite Scroll" to fetch the next set of items when the user reaches the end of the list.
 - Shows a snackbar whenever their is no internet connection.
 - Displays a well defined error message whenever calls to the punk api throws an exception.
-- Implements a implement a retry button whenever calls to the punk api throws an exception e.g When there is no internet connection.
+- Implement a retry button whenever calls to the punk api throws an exception e.g When there is no internet connection.
 - Unit tests and widgets tests
 
 <br>
